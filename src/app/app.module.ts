@@ -6,11 +6,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
+import { HelperComponent } from './helper/helper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    HelperComponent
   ],
   imports: [
     BrowserModule,
