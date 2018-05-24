@@ -19,7 +19,11 @@ export class BasketService {
 
   addToBasket (service: Service[]) {
     const basket = this.readBasket();
-    basket.items = basket.items.concat(service);
+    if (basket.items == null) {
+      basket.items = service;
+    } else {
+      basket.items = basket.items.concat(service);
+    }
     this.saveBasket(basket);
   }
 }
