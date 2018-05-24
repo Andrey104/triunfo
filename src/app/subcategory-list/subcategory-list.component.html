@@ -1,0 +1,23 @@
+<div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Данные</th>
+      <th scope="col">Цена</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of services">
+      <td>{{item.name}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.price}}</td>
+      <td>
+        <button (click)="addItem(item)" routerLink="/basket" style="float: right">+</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

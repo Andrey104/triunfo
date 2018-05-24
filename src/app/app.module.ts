@@ -14,6 +14,9 @@ import { BasketComponent } from './basket/basket.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { LoginComponent } from './login/login.component';
+import { SubcategoryListComponent } from './subcategory-list/subcategory-list.component';
+import {ActivatedRoute} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { CategoriesComponent } from './categories/categories.component';
     BasketComponent,
     AboutComponent,
     ServiceListComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    LoginComponent,
+    SubcategoryListComponent
   ],
   imports: [
     BrowserModule,

@@ -4,9 +4,11 @@
     <a class="p-2 text-dark" routerLink="/">Главная</a>
     <a class="p-2 text-dark" routerLink="services">Услуги</a>
     <a class="p-2 text-dark" routerLink="assistant">Помощник</a>
-    <a class="p-2 text-dark" routerLink="basket">Корзина</a>
+    <a [ngClass]="{open: isLogin()}" class="p-2 text-dark shadow" routerLink="basket">Мои услуги</a>
+    <a [ngClass]="{shadow: isLogin()}" class="p-2 text-dark" routerLink="basket">Корзина</a>
   </nav>
-  <a class="btn btn-outline-primary"routerLink="/login">Войти</a>
+  <a [ngClass]="{shadow: isLogin()}" class="btn btn-outline-primary" routerLink="/login">Войти</a>
+  <a [ngClass]="{open: isLogin()}" class="btn btn-outline-primary shadow" (click)="logout()" routerLink="/">Выйти</a>
 </div>
 <div class="content">
   <router-outlet></router-outlet>

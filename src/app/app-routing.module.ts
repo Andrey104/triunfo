@@ -5,6 +5,8 @@ import {HelperComponent} from './helper/helper.component';
 import {BasketComponent} from './basket/basket.component';
 import {AboutComponent} from './about/about.component';
 import {CategoriesComponent} from './categories/categories.component';
+import {LoginComponent} from './login/login.component';
+import {SubcategoryListComponent} from './subcategory-list/subcategory-list.component';
 
 
 const mainRoutes: Routes = [
@@ -13,6 +15,8 @@ const mainRoutes: Routes = [
   {path: 'basket', component: BasketComponent},
   {path: 'about', component: AboutComponent},
   {path: 'services', component: CategoriesComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'categories/:id/:cat', component: SubcategoryListComponent},
   {path: '**', redirectTo: ''}
 ];
 

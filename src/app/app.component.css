@@ -4,6 +4,14 @@
   z-index: 100;
 }
 
+.shadow {
+  display: none;
+}
+.open {
+  display: block;
+}
+
+
 .content {
   padding-top: 71px;
   min-height: calc(100vh - 25px);
