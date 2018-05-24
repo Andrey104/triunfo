@@ -30,6 +30,7 @@ export class HelperComponent implements OnInit {
     resultElement1.date = '21.02.2019';
     resultElement1.time = '21:20';
     resultElement1.priceT = '30000 р';
+    resultElement1.price = 30000;
     const resultElement2 = new Service();
     resultElement2.type = 1;
     resultElement2.id = 2;
@@ -37,6 +38,7 @@ export class HelperComponent implements OnInit {
     resultElement2.date = '21.02.2019';
     resultElement2.time = '21:20';
     resultElement2.priceT = '10000 р';
+    resultElement2.price = 10000;
     const resultElement3 = new Service();
     resultElement3.type = 2;
     resultElement3.id = 3;
@@ -44,6 +46,7 @@ export class HelperComponent implements OnInit {
     resultElement3.date = '21.02.2019';
     resultElement3.time = '21:20';
     resultElement3.priceT = '3000 р/человек + 10000 аренда';
+    resultElement3.price = 3000;
     const resultElement4 = new Service();
     resultElement4.type = 3;
     resultElement4.id = 4;
@@ -51,6 +54,7 @@ export class HelperComponent implements OnInit {
     resultElement4.date = '21.02.2019';
     resultElement4.time = '21:20';
     resultElement4.priceT = '15000 р';
+    resultElement4.price = 15000;
     this.result.elements = [resultElement1, resultElement2, resultElement3, resultElement4];
   }
 
