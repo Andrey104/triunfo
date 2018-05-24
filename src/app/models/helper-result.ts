@@ -1,5 +1,5 @@
-import {HelperResultElement} from './helper-result-element';
+import {Service} from './service';
 
 export class HelperResult {
-  elements: HelperResultElement[];
+  elements: Service[];
 }

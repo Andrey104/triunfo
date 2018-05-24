@@ -13,7 +13,7 @@ import {HelperResultElementTypePipe} from './pipes/HelperResultElementType.pipe'
 import { BasketComponent } from './basket/basket.component';
 import { AboutComponent } from './about/about.component';
 import { ServiceListComponent } from './service-list/service-list.component';
-import { BasketItemComponent } from './basket-item/basket-item.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { BasketItemComponent } from './basket-item/basket-item.component';
     BasketComponent,
     AboutComponent,
     ServiceListComponent,
-    BasketItemComponent
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

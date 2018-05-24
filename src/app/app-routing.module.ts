@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {HelperComponent} from './helper/helper.component';
 import {BasketComponent} from './basket/basket.component';
 import {AboutComponent} from './about/about.component';
-import {ServiceListComponent} from './service-list/service-list.component';
+import {CategoriesComponent} from './categories/categories.component';
 
 
 const mainRoutes: Routes = [
@@ -12,7 +12,7 @@ const mainRoutes: Routes = [
   {path: 'assistant', component: HelperComponent},
   {path: 'basket', component: BasketComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'services', component: ServiceListComponent},
+  {path: 'services', component: CategoriesComponent},
   {path: '**', redirectTo: ''}
 ];
 

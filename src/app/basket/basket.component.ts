@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Basket} from '../models/basket';
-import {BasketItem} from '../models/basket-item';
+import {Service} from '../models/service';
+import {BasketService} from '../services/basket.service';
 
 @Component({
   selector: 'app-basket',
@@ -9,55 +10,65 @@ import {BasketItem} from '../models/basket-item';
 })
 export class BasketComponent implements OnInit {
 
-  constructor() { }
+  constructor(private basketService: BasketService) { }
   basket: Basket;
   number: number;
   ngOnInit() {
-    this.basket = this.readBasket();
+    this.basket = this.basketService.readBasket();
   }
+
   initBasket() {
     const basket = new Basket();
-    this.number = 0;
-    const basketItem1 = new BasketItem();
+    const basketItem1 = new Service();
     basketItem1.id = 1;
-    basketItem1.price = '200.00р';
-    basketItem1.data = 'Сверление профиля обычным сверлом';
+    basketItem1.price = 200.00;
+    basketItem1.description = 'Сверление профиля обычным сверлом';
     basketItem1.name = 'Сверление профиля';
-    const basketItem2 = new BasketItem();
+    const basketItem2 = new Service();
     basketItem2.id = 2;
-    basketItem2.price = '200.00р';
-    basketItem2.data = 'Сверление профиля ступенчатым сверлом';
+    basketItem2.price = 200;
+    basketItem2.description = 'Сверление профиля ступенчатым сверлом';
     basketItem2.name = 'Сверление профиля ступенчатое';
-    const basketItem3 = new BasketItem();
+    const basketItem3 = new Service();
     basketItem3.id = 3;
-    basketItem3.price = '200.00р';
-    basketItem3.data = 'Сверление профиля обычным сверлом';
+    basketItem3.price = 200;
+    basketItem3.description = 'Сверление профиля обычным сверлом';
     basketItem3.name = 'Сверление профиля';
     basket.items = [basketItem1, basketItem2, basketItem3];
-    this.saveBasket(basket);
+    this.basketService.saveBasket(basket);
     this.basket = basket;
   }
-  itemNumber() {
-    this.number = this.number + 1;
-    return this.number;
+
+  addToBasket() {
+    const basketItem1 = new Service();
+    basketItem1.id = 1;
+    basketItem1.price = 200.00;
+    basketItem1.description = 'Сверление профиля обычным сверлом';
+    basketItem1.name = 'Сверление профиля';
+    const basketItem2 = new Service();
+    basketItem2.id = 2;
+    basketItem2.price = 200;
+    basketItem2.description = 'Сверление профиля ступенчатым сверлом';
+    basketItem2.name = 'Сверление профиля ступенчатое';
+    const basketItem3 = new Service();
+    basketItem3.id = 3;
+    basketItem3.price = 200;
+    basketItem3.description = 'Сверление профиля обычным сверлом';
+    basketItem3.name = 'Сверление профиля';
+    this.basketService.addToBasket([basketItem1, basketItem2, basketItem3]);
+    this.basket = this.basketService.readBasket();
   }
 
   delItem(id: number) {
     this.basket.items = this.basket.items.filter(item => item.id !== id);
     this.number = 0;
-    this.saveBasket(this.basket);
+    this.basketService.saveBasket(this.basket);
   }
 
   orderSend() {
     alert('Заказ принят в обработку!');
   }
 
-  saveBasket (basket: Basket) {
-    localStorage.setItem('basket', JSON.stringify(basket));
-  }
 
-  readBasket () {
-    return JSON.parse(localStorage.getItem('basket'));
-  }
 
 }

@@ -1,5 +1,5 @@
-import {BasketItem} from './basket-item';
+import {Service} from './service';
 
 export class Basket {
-  items: BasketItem[];
+  items: Service[];
 }

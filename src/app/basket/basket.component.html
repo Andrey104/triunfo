@@ -2,7 +2,6 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col">№</th>
       <th scope="col">Название</th>
       <th scope="col">Данные</th>
       <th scope="col">Цена</th>
@@ -11,7 +10,6 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of basket?.items">
-      <th scope="row">{{itemNumber()}}</th>
       <td>{{item.name}}</td>
       <td>{{item.name}}</td>
       <td>{{item.data}}</td>
@@ -23,5 +21,4 @@
     </tbody>
   </table>
   <button (click)="orderSend()" routerLink="/" type="button" class="btn btn-lg btn-block btn-outline-primary">Заказать</button>
-  <button (click)="initBasket()" type="button" class="btn btn-lg btn-block btn-outline-primary">Что-то сюда навалить</button>
 </div>
