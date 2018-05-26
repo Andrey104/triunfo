@@ -1,0 +1,33 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+  <h2 class="display-4">
+    {{user.name}}
+    <button routerLink="edit" type="button" class="btn btn-outline-primary">Ред.</button>
+  </h2>
+  <p class="lead">Электронная почта: {{user.email}}</p>
+  <p class="lead">Телефон: {{user.phone}}</p>
+  <p class="lead">Логин: {{user.username}}</p>
+</div>
+<div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
+  <h2 class="display-4">Заказы</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Данные</th>
+      <th scope="col">Цена</th>
+      <th scope="col"> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of basket?.items">
+      <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.price}}</td>
+      <td>
+        <button (click)="delItem(item.id)" style="float: right">X</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button (click)="orderSend()" routerLink="/" type="button" class="btn btn-lg btn-block btn-outline-primary">Заказать</button>
+</div>

@@ -1,15 +1,28 @@
-<div class="navbar-fixed d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-  <h5 class="my-0 mr-md-auto font-weight-normal">Triunfo</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" routerLink="/">Главная</a>
-    <a class="p-2 text-dark" routerLink="services">Услуги</a>
-    <a class="p-2 text-dark" routerLink="assistant">Помощник</a>
-    <a [ngClass]="{open: isLogin()}" class="p-2 text-dark shadow" routerLink="basket">Мои услуги</a>
-    <a [ngClass]="{shadow: isLogin()}" class="p-2 text-dark" routerLink="basket">Корзина</a>
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" routerLink="/">Triunfo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="services">Услуги</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="assistant">Помощник</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+          <a class="nav-link" routerLink="personal">Личный кабинет</a>
+        </li>
+      </ul>
+
+      <a [ngClass]="{shadow: isLogin()}" class="btn btn-primary" routerLink="/login">Войти</a>
+      <a [ngClass]="{open: isLogin()}" class="btn btn-primary shadow" (click)="logout()" routerLink="/">Выйти</a>
+    </div>
   </nav>
-  <a [ngClass]="{shadow: isLogin()}" class="btn btn-outline-primary" routerLink="/login">Войти</a>
-  <a [ngClass]="{open: isLogin()}" class="btn btn-outline-primary shadow" (click)="logout()" routerLink="/">Выйти</a>
-</div>
+</header>
 <div class="content">
   <router-outlet></router-outlet>
 </div>

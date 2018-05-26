@@ -7,11 +7,15 @@ import {AboutComponent} from './about/about.component';
 import {CategoriesComponent} from './categories/categories.component';
 import {LoginComponent} from './login/login.component';
 import {SubcategoryListComponent} from './subcategory-list/subcategory-list.component';
+import {PersonalPageComponent} from './personal-page/personal-page.component';
+import {PersonalEditComponent} from './personal-edit/personal-edit.component';
 
 
 const mainRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'assistant', component: HelperComponent},
+  {path: 'personal', component: PersonalPageComponent},
+  {path: 'personal/edit', component: PersonalEditComponent},
   {path: 'basket', component: BasketComponent},
   {path: 'about', component: AboutComponent},
   {path: 'services', component: CategoriesComponent},
@@ -19,6 +23,7 @@ const mainRoutes: Routes = [
   {path: 'categories/:id/:cat', component: SubcategoryListComponent},
   {path: '**', redirectTo: ''}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(mainRoutes)],

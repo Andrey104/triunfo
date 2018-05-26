@@ -17,6 +17,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { LoginComponent } from './login/login.component';
 import { SubcategoryListComponent } from './subcategory-list/subcategory-list.component';
 import {ActivatedRoute} from "@angular/router";
+import { PersonalPageComponent } from './personal-page/personal-page.component';
+import { PersonalEditComponent } from './personal-edit/personal-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {ActivatedRoute} from "@angular/router";
     ServiceListComponent,
     CategoriesComponent,
     LoginComponent,
-    SubcategoryListComponent
+    SubcategoryListComponent,
+    PersonalPageComponent,
+    PersonalEditComponent
   ],
   imports: [
     BrowserModule,
