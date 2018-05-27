@@ -1,30 +1,34 @@
 <div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
-<div class="auth text-center">
-  <form [formGroup]="myForm" class="form-signin" (ngSubmit)="login()">
-    <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
+  <div class="auth text-center">
+    <form [formGroup]="myForm" class="form-signin" (ngSubmit)="login()">
+      <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
 
-    <label for="login" class="sr-only">Login</label>
+      <label for="login" class="sr-only">Login</label>
 
-    <input [(ngModel)]="username" name="user" id="login" type="text" class="form-control" formControlName="userName" required/>
-
-
-    <div class="alert alert-danger"
-         *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
-      <div class="fail">Не указано имя</div>
-    </div>
-
-    <label for="password" class="sr-only">Password</label>
-    <input [(ngModel)]="password" name="password" id="password" type="password" class="form-control" formControlName="userPassword">
+      <input [(ngModel)]="username" name="user" id="login" type="text" class="form-control" formControlName="userName"
+             required/>
 
 
-    <div class="alert alert-danger"
-         *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched">
-      <div class="fail">Не указан пароль</div>
-    </div>
+      <div class="alert alert-danger"
+           *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+        <div class="fail">Не указано имя</div>
+      </div>
 
-    <button [disabled]="myForm.invalid" class="btn btn-lg btn-primary btn-block">Вход</button>
-    <div [class.fail]="fail" *ngIf="fail">Неверный логин или пароль</div>
-  </form>
+      <label for="password" class="sr-only">Password</label>
+      <input [(ngModel)]="password" name="password" id="password" type="password" class="form-control"
+             formControlName="userPassword">
 
+
+      <div class="alert alert-danger"
+           *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched">
+        <div class="fail">Не указан пароль</div>
+      </div>
+
+      <button [disabled]="myForm.invalid" class="btn btn-lg btn-primary btn-block">Вход</button>
+      <div [class.fail]="fail" *ngIf="fail">Неверный логин или пароль</div>
+    </form>
+  </div>
 </div>
+<div class=" helper pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+  <button routerLink="/registration" class="btn btn-lg btn-primary btn-block">Регистрация</button>
 </div>

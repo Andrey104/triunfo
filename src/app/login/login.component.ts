@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
-
-
 import {User} from '../models/user';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
@@ -38,13 +35,24 @@ export class LoginComponent implements OnInit {
     const user = new User();
     user.username = this.username;
     user.password = this.password;
-    if (this.authService.login(user)) {
-      this.router.navigate(['/']);
-    } else {
-      this.fail = true;
-    }
+    this.authService.login(user).subscribe(
+      data => {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userName', data.user.name);
+        localStorage.setItem('userRole', data.user.role.toString());
+        this.router.navigate(['/']);
+      },
+      err => {
+        console.log('Error:' + err.error);
+        this.loading = false;
+        if (err.status === 400) {
+          this.fail = true;
+        }
+      }
+    );
   }
   logout() {
     this.authService.logout();
   }
 }
+

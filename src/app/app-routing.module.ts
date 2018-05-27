@@ -9,11 +9,13 @@ import {LoginComponent} from './login/login.component';
 import {SubcategoryListComponent} from './subcategory-list/subcategory-list.component';
 import {PersonalPageComponent} from './personal-page/personal-page.component';
 import {PersonalEditComponent} from './personal-edit/personal-edit.component';
+import {RegistrationComponent} from './registration/registration.component';
 
 
 const mainRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'assistant', component: HelperComponent},
+  {path: 'registration', component: RegistrationComponent},
   {path: 'personal', component: PersonalPageComponent},
   {path: 'personal/edit', component: PersonalEditComponent},
   {path: 'basket', component: BasketComponent},

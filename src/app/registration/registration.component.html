@@ -1,0 +1,42 @@
+<div class=" helper pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+  <form [formGroup]="registration">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Тип пользователя:</label>
+      <select class="form-control" id="exampleFormControlSelect1" formControlName="role">
+        <option [ngValue]="2">Поставщик</option>
+        <option [ngValue]="1">Покупатель</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Имя пользователя:</label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="form-group">
+      <label >Пароль:</label>
+      <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="form-group">
+      <label >Электронная почта:</label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label >Имя:</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label >Телефон:</label>
+      <input type="tel" class="form-control" formControlName="phone">
+    </div>
+    <div class="form-group hidden" [ngClass]="{open: visibleProviderField}" >
+      <label >Адрес:</label>
+      <input type="text" class="form-control" formControlName="address">
+    </div>
+    <div class="form-group hidden" [ngClass]="{open: visibleProviderField}">
+      <label >Сайт:</label>
+      <input type="text" class="form-control" formControlName="site">
+    </div>
+    <button (click)="ok()" type="submit" class="btn btn-lg btn-block btn-outline-primary">
+      Зарегистрироваться
+    </button>
+  </form>
+</div>

@@ -1,28 +1,39 @@
 import { Injectable } from '@angular/core';
 import {User} from '../models/user';
+import {Observable} from 'rxjs/index';
+import {BaseApi} from '../core/base-api';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService extends BaseApi {
 
-  constructor() { }
+  constructor(public http: HttpClient) {
+    super(http);
+  }
 
-  login(user: User) {
-    if ((user.username === 'test') || (user.password === 'test')) {
-      localStorage.setItem('auth', 'true');
-      return true;
-    } else {
-      localStorage.setItem('auth', 'false');
-      return false;
-    }
+  login(user: User): Observable<User> {
+    return this.loginRequest('token/', user);
   }
 
   logout() {
-    localStorage.setItem('auth', 'false');
+    localStorage.removeItem('token');
   }
 
   isLogin() {
-    return localStorage.getItem('auth') === 'true';
+    return localStorage.getItem('token');
+  }
+
+  registration(user: User) {
+    return this.postNoAuth('users/', user);
+  }
+
+  getUserName() {
+    return localStorage.getItem('userName');
+  }
+
+  getUserRole() {
+    return localStorage.getItem('userRole');
   }
 }
