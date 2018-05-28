@@ -4,6 +4,7 @@
     <tr>
       <th scope="col">Название</th>
       <th scope="col">Данные</th>
+      <th scope="col">Тип</th>
       <th scope="col">Цена</th>
       <th scope="col"> </th>
     </tr>
@@ -12,6 +13,7 @@
     <tr *ngFor="let item of services">
       <td>{{item.name}}</td>
       <td>{{item.details}}</td>
+      <td>{{item.subtype.name}}</td>
       <td>{{item.price}}</td>
       <!--<td>-->
         <!--<button (click)="delItem(item.id)" style="float: right">X</button>-->

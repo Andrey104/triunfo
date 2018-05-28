@@ -8,6 +8,7 @@ import {Type} from '../models/type';
 import {User} from '../models/user';
 import {Order} from "../models/order";
 import {Helper} from "../models/helper";
+import {ImageC} from "../models/image";
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +50,11 @@ export class ServiceService extends BaseApi {
   }
   getHelper(helper: Helper): Observable<User[]> {
     return this.post(`helper/`, helper);
+  }
+  addImg(imageC: ImageC): Observable<Order<number>> {
+    const formData = new FormData();
+    formData.append('image', imageC.file[0]);
+    formData.append('service', imageC.service);
+    return this.postImg(`images/`, formData);
   }
 }

@@ -5,6 +5,7 @@ import {SubType} from '../models/sub-type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Service} from '../models/service';
 import {Router} from '@angular/router';
+import {ImageC} from '../models/image';
 
 @Component({
   selector: 'app-add-service',
@@ -16,6 +17,7 @@ export class AddServiceComponent implements OnInit {
   constructor(private service: ServiceService,
               private router: Router) { }
   subtypes: SubType[];
+  cd;
 
   serviceForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -46,10 +48,11 @@ export class AddServiceComponent implements OnInit {
     service.details = this.serviceForm.value.details;
     service.subtype = this.serviceForm.value.subtype;
     this.service.addService(service).subscribe(data => {
-      this.router.navigate(['/my-services']);
+      if (data) {
+        this.router.navigate(['/my-services']);
+      }
     }, error2 => {
       alert('Ошибка! Попробуйте снова!');
     });
   }
-
 }

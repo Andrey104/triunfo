@@ -11,7 +11,7 @@ export class Service {
   details: string;
   rate: number;
   count: number;
-  subtype: number;
+  subtype: any;
 }
 // sub_type = ForeignKey(SubType, on_delete=PROTECT)
 // provider = ForeignKey(CustomUser, on_delete=PROTECT)

@@ -35,5 +35,8 @@ export class PersonalPageComponent implements OnInit {
         log(error2);
       });
   }
+  isProvider(): boolean {
+    if (this.role === '2') { return true; }
+  }
 
 }

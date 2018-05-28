@@ -3,9 +3,22 @@
     {{user.name}}
     <!--<button routerLink="edit" type="button" class="btn btn-outline-primary">Ред.</button>-->
   </h2>
+  <p class="lead">Роль: {{roleStr()}}</p>
   <p class="lead">Электронная почта: {{user.email}}</p>
   <p class="lead">Телефон: {{user.phone}}</p>
-  <p class="lead">Роль: {{roleStr()}}</p>
+  <p class="lead hidden"
+     [ngClass]="{open: isProvider()}">
+    Рейтинг: {{user.rate}}
+  </p>
+  <p class="lead hidden"
+     [ngClass]="{open: isProvider()}">
+    Сайт: {{user.site}}
+  </p>
+  <p class="lead hidden"
+     [ngClass]="{open: isProvider()}">
+    Адрес: {{user.address}}
+  </p>
+
 </div>
 <div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
   <h2>Заказы</h2>

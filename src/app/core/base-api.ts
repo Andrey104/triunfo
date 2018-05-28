@@ -84,6 +84,13 @@ export class BaseApi {
     );
   }
 
+  postImg(url: string = '', data?: any): Observable<any> {
+    return this.http.post(
+      this.getUrl(url),
+      data,
+    );
+  }
+
   private token() {
     return localStorage.getItem('token');
   }
