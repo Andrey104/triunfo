@@ -47,7 +47,7 @@ export class ServiceService extends BaseApi {
   getOrder(id: number): Observable<Order<Service>> {
     return this.get(`orders/${id}`);
   }
-  getHelper(helper: Helper): Observable<User> {
+  getHelper(helper: Helper): Observable<User[]> {
     return this.post(`helper/`, helper);
   }
 }

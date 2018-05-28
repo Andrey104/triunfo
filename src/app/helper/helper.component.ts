@@ -7,6 +7,7 @@ import {BasketService} from '../services/basket.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ServiceService} from "../services/service.service";
 import {Helper} from "../models/helper";
+import {User} from "../models/user";
 
 @Component({
   selector: 'app-helper',
@@ -19,6 +20,7 @@ export class HelperComponent implements OnInit {
               private service: ServiceService) { }
   helperOpen = true;
   helperResultOpen = false;
+  providers: User[];
   result: HelperResult;
 
   helper: FormGroup = new FormGroup({
@@ -79,8 +81,11 @@ export class HelperComponent implements OnInit {
     helper.wishes = this.helper.value.wishes;
 
     this.service.getHelper(helper).subscribe(data => {
-      this.helperOpen = false;
-      this.helperResultOpen = true;
+      if (data) {
+        this.providers = data;
+        this.helperOpen = false;
+        this.helperResultOpen = true;
+      }
     }, error2 => {
       alert('Ошибка! Попробуйте снова!');
     });

@@ -1,11 +1,10 @@
-<div class="container py-3">
-  <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 box-shadow" *ngFor="let resultElement of result?.elements">
-      <app-helper-result-element [resultElement]="resultElement" ></app-helper-result-element>
-    </div>
-  </div>
-  <div class="pricing-header px-3 pb-md-4 mx-auto">
-    <button (click)="toBasket()" routerLink="/basket" type="button" class="btn btn-lg btn-block btn-outline-primary">В корзину</button>
-  </div>
+<div class=" helper pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+  <ul class="list-group">
+    <li class="list-group-item сlickable"
+        *ngFor="let provider of providers"
+        routerLink="/provider/{{provider.id}}">
+      <h4>{{provider.name}}</h4>
+      <p>Рейтинг: {{provider.rate}}</p>
+    </li>
+  </ul>
 </div>
-

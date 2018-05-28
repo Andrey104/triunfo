@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {HelperResult} from '../models/helper-result';
-import {HelperResultElement} from '../models/helper-result-element';
-import {BasketService} from "../services/basket.service";
+import {ServiceService} from '../services/service.service';
+import {ActivatedRoute} from '@angular/router';
+import {User} from '../models/user';
 
 @Component({
   selector: 'app-helper-result',
@@ -10,15 +10,12 @@ import {BasketService} from "../services/basket.service";
 })
 export class HelperResultComponent implements OnInit {
 
-
-  constructor(private basketService: BasketService) { }
-  @Input() result: HelperResult;
+  constructor(private service: ServiceService,
+              private activatedRoute: ActivatedRoute) { }
+  @Input() providers: User[];
+  id: number;
 
   ngOnInit() {
-  }
-
-  toBasket () {
-    this.basketService.addToBasket(this.result.elements);
   }
 
 }
