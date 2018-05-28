@@ -5,6 +5,7 @@ import {log} from "util";
 import {ActivatedRoute} from "@angular/router";
 import {User} from "../models/user";
 import {Service} from "../models/service";
+import {BasketService} from "../services/basket.service";
 
 @Component({
   selector: 'app-provider',
@@ -15,7 +16,8 @@ export class ProviderComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private service: ServiceService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private basket: BasketService) { }
   idProvider: number;
   provider: User;
   services: Service[];
@@ -43,6 +45,9 @@ export class ProviderComponent implements OnInit {
       }, error2 => {
         log(error2);
       });
+  }
+  addItem(service: Service) {
+    this.basket.addToBasket([service]);
   }
 
 }

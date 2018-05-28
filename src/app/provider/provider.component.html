@@ -1,11 +1,11 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
   <h2 class="display-4">
-    {{provider.name}}
+    {{provider?.name}}
   </h2>
-  <p class="lead">Электронная почта: {{provider.email}}</p>
-  <p class="lead">Телефон: {{provider.phone}}</p>
-  <p class="lead">Сайт: {{provider.site}}</p>
-  <p class="lead">Адрес: {{provider.address}}</p>
+  <p class="lead">Электронная почта: {{provider?.email}}</p>
+  <p class="lead">Телефон: {{provider?.phone}}</p>
+  <p class="lead">Сайт: {{provider?.site}}</p>
+  <p class="lead">Адрес: {{provider?.address}}</p>
 </div>
 <div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
   <h2 class="display-4">Услуги</h2>
@@ -15,14 +15,17 @@
       <th scope="col">Название</th>
       <th scope="col">Данные</th>
       <th scope="col">Цена</th>
-      <th scope="col"> </th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let service of services">
-    <td>{{service.name}}</td>
-    <td>{{service.details}}</td>
-    <td>{{service.price}}</td>
+      <td>{{service.name}}</td>
+      <td>{{service.details}}</td>
+      <td>{{service.price}}</td>
+      <td>
+        <button (click)="addItem(service)" routerLink="/basket" style="float: right">+</button>
+      </td>
     </tr>
     </tbody>
   </table>
