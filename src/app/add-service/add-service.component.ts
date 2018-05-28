@@ -44,7 +44,7 @@ export class AddServiceComponent implements OnInit {
     service.name = this.serviceForm.value.name;
     service.price = this.serviceForm.value.price;
     service.details = this.serviceForm.value.details;
-    service.sub_type = this.serviceForm.value.subtype;
+    service.subtype = this.serviceForm.value.subtype;
     this.service.addService(service).subscribe(data => {
       this.router.navigate(['/my-services']);
     }, error2 => {
