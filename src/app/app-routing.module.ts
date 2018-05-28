@@ -12,11 +12,15 @@ import {PersonalEditComponent} from './personal-edit/personal-edit.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {MyServicesComponent} from "./my-services/my-services.component";
 import {AddServiceComponent} from "./add-service/add-service.component";
+import {ProvidersComponent} from "./providers/providers.component";
+import {ProviderComponent} from "./provider/provider.component";
 
 
 const mainRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'assistant', component: HelperComponent},
+  {path: 'providers/:idSubType', component: ProvidersComponent},
+  {path: 'provider/:idProvider', component: ProviderComponent},
   {path: 'my-services', component: MyServicesComponent},
   {path: 'my-services/add', component: AddServiceComponent},
   {path: 'registration', component: RegistrationComponent},

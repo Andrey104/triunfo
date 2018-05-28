@@ -22,6 +22,8 @@ import { BaseApi } from './core/base-api';
 import { RegistrationComponent } from './registration/registration.component';
 import { MyServicesComponent } from './my-services/my-services.component';
 import { AddServiceComponent } from './add-service/add-service.component';
+import { ProvidersComponent } from './providers/providers.component';
+import { ProviderComponent } from './provider/provider.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { AddServiceComponent } from './add-service/add-service.component';
     PersonalEditComponent,
     RegistrationComponent,
     MyServicesComponent,
-    AddServiceComponent
+    AddServiceComponent,
+    ProvidersComponent,
+    ProviderComponent
   ],
   imports: [
     BrowserModule,

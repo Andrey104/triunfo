@@ -10,6 +10,7 @@ export class User {
   address: string;
   site: string;
   user: User;
+  rate: number;
 }
 
 // username = CharField(max_length=100)

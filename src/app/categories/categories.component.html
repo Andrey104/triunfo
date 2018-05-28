@@ -6,12 +6,12 @@
       </div>
       <div class="card-body">
         <ul class="list-unstyled mt-3 mb-4">
-          <li class="sh"
+          <a class="link sh"
               *ngFor="let sub of subtypes"
-              routerLink="/categories/{{sub?.id}}/{{type?.id}}"
+              routerLink="/providers/{{sub?.id}}"
               [ngClass]="{open: showSubType(type.id, sub.type.id)}">
             {{sub?.name}}
-          </li>
+          </a>
         </ul>
       </div>
     </div>

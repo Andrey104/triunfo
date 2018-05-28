@@ -38,4 +38,8 @@ export class AuthService extends BaseApi {
   getUserRole() {
     return localStorage.getItem('userRole');
   }
+
+  getUser(id: number) {
+    return this.getNoAuth(`users/${id}`);
+  }
 }

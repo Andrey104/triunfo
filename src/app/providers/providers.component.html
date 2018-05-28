@@ -1,0 +1,10 @@
+<div class=" helper pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+    <ul class="list-group">
+      <li class="list-group-item сlickable"
+          *ngFor="let provider of providers"
+          routerLink="/provider/{{provider.id}}">
+        <h4>{{provider.name}}</h4>
+        <p>Рейтинг: {{provider.rate}}</p>
+      </li>
+    </ul>
+</div>
