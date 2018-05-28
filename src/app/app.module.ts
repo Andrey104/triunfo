@@ -26,6 +26,7 @@ import { ProvidersComponent } from './providers/providers.component';
 import { ProviderComponent } from './provider/provider.component';
 import {DateTimePipe} from './pipes/dateTime.pipe';
 import {UtilsService} from './services/utils.service';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import {UtilsService} from './services/utils.service';
     ProvidersComponent,
     ProviderComponent,
     DateTimePipe,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

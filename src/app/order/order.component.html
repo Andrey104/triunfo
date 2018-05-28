@@ -1,0 +1,28 @@
+<div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
+  <h2 class="display-4">
+    {{order?.id}}
+  </h2>
+  <p>{{order?.time | dateFormat: "fullDate"}}</p>
+  <p>{{order?.wishes}}</p>
+  <h4>
+    Услуги:
+  </h4>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Данные</th>
+      <th scope="col">Цена</th>
+      <th scope="col"> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let service of order?.services">
+      <td>{{service?.name}}</td>
+      <td>{{service?.details}}</td>
+      <td>{{service?.price}}</td>
+    </tr>
+    </tbody>
+    <p>Сумма: {{serviceSum()}}</p>
+  </table>
+</div>

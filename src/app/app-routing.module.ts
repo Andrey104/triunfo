@@ -14,6 +14,7 @@ import {MyServicesComponent} from "./my-services/my-services.component";
 import {AddServiceComponent} from "./add-service/add-service.component";
 import {ProvidersComponent} from "./providers/providers.component";
 import {ProviderComponent} from "./provider/provider.component";
+import {OrderComponent} from "./order/order.component";
 
 
 const mainRoutes: Routes = [
@@ -21,6 +22,7 @@ const mainRoutes: Routes = [
   {path: 'assistant', component: HelperComponent},
   {path: 'providers/:idSubType', component: ProvidersComponent},
   {path: 'provider/:idProvider', component: ProviderComponent},
+  {path: 'order/:id', component: OrderComponent},
   {path: 'my-services', component: MyServicesComponent},
   {path: 'my-services/add', component: AddServiceComponent},
   {path: 'registration', component: RegistrationComponent},

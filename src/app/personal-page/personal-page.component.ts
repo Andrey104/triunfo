@@ -16,12 +16,17 @@ export class PersonalPageComponent implements OnInit {
   constructor(private auth: AuthService,
               private service: ServiceService) { }
   user: User;
+  role;
   orders: Order<Service>[];
   ngOnInit() {
     this.loadServices();
     this.user = this.auth.getAuthUser();
+    this.role = this.auth.getUserRole();
   }
-
+  roleStr() {
+    if (this.role === '2') { return 'Поставщик'; }
+    if (this.role === '1') { return 'Пользователь'; }
+  }
   loadServices(): void {
     this.service.getOrders()
       .subscribe(orders => {

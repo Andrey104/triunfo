@@ -19,6 +19,7 @@ export class BasketComponent implements OnInit {
               private router: Router) { }
   basket: Basket;
   number: number;
+  sum: number;
 
   order: FormGroup = new FormGroup({
     time: new FormControl('', Validators.required),
@@ -47,6 +48,14 @@ export class BasketComponent implements OnInit {
     }, error2 => {
       alert('Ошибка! Попробуйте снова!');
     });
+  }
+
+  serviceSum() {
+    let sum = 0;
+    this.basket.items.forEach(item => {
+      sum = sum + Number(item.price);
+    });
+    return sum.toFixed(2);
   }
 
   servicesMinMap(service: any) {

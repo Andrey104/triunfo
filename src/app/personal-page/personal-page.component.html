@@ -5,7 +5,7 @@
   </h2>
   <p class="lead">Электронная почта: {{user.email}}</p>
   <p class="lead">Телефон: {{user.phone}}</p>
-  <p class="lead">Логин: {{user.username}}</p>
+  <p class="lead">Роль: {{roleStr()}}</p>
 </div>
 <div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
   <h2>Заказы</h2>
@@ -18,7 +18,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let order of orders">
+    <tr class="сlickable"
+        *ngFor="let order of orders"
+        routerLink="/order/{{order.id}}">
       <td>{{order.id}}</td>
       <td>{{order.wishes}}</td>
       <td>{{order.time | dateFormat: 'fullDate'}}</td>

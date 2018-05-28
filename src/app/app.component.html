@@ -7,13 +7,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li routerLinkActive="active" class="nav-item">
-          <a class="nav-link" routerLink="services">Услуги</a>
-        </li>
-        <li routerLinkActive="active" class="nav-item">
-          <a class="nav-link" routerLink="assistant">Помощник</a>
-        </li>
 
+        <li routerLinkActive="active" class="nav-item">
+          <a [ngClass]="{open: isClient()}"
+             class="nav-link shadow"
+             routerLink="services">Услуги</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+          <a [ngClass]="{open: isClient()}"
+             class="nav-link shadow"
+             routerLink="assistant">Помощник</a>
+        </li>
         <li routerLinkActive="active" class="nav-item">
         <a [ngClass]="{open: isProvider()}"
            class="nav-link shadow"
