@@ -42,4 +42,7 @@ export class AuthService extends BaseApi {
   getUser(id: number) {
     return this.getNoAuth(`users/${id}`);
   }
+  getAuthUser() {
+    return JSON.parse(localStorage.getItem('user'));
+  }
 }

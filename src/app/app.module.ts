@@ -24,6 +24,8 @@ import { MyServicesComponent } from './my-services/my-services.component';
 import { AddServiceComponent } from './add-service/add-service.component';
 import { ProvidersComponent } from './providers/providers.component';
 import { ProviderComponent } from './provider/provider.component';
+import {DateTimePipe} from './pipes/dateTime.pipe';
+import {UtilsService} from './services/utils.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ProviderComponent } from './provider/provider.component';
     MyServicesComponent,
     AddServiceComponent,
     ProvidersComponent,
-    ProviderComponent
+    ProviderComponent,
+    DateTimePipe,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { ProviderComponent } from './provider/provider.component';
     BrowserAnimationsModule,
   ],
   providers: [
-    BaseApi
+    BaseApi,
+    UtilsService
   ],
   bootstrap: [AppComponent]
 })

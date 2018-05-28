@@ -5,7 +5,8 @@ import {Observable} from 'rxjs/index';
 import {Service} from '../models/service';
 import {SubType} from '../models/sub-type';
 import {Type} from '../models/type';
-import {User} from "../models/user";
+import {User} from '../models/user';
+import {Order} from "../models/order";
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,11 @@ export class ServiceService extends BaseApi {
   }
   getProviderServices(provider: number): Observable<Service[]> {
     return this.getNoAuth(`services/?provider=${provider}`);
+  }
+  addOrder(order: Order<number>): Observable<Order<number>> {
+    return this.post(`orders/`, order);
+  }
+  getOrders(): Observable<Order<Service>[]> {
+    return this.get(`orders/`);
   }
 }

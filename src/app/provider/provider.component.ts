@@ -6,6 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 import {User} from "../models/user";
 import {Service} from "../models/service";
 import {BasketService} from "../services/basket.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-provider',
@@ -21,6 +22,7 @@ export class ProviderComponent implements OnInit {
   idProvider: number;
   provider: User;
   services: Service[];
+
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.idProvider = params['idProvider'];

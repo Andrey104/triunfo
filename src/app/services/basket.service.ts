@@ -17,6 +17,10 @@ export class BasketService {
     return JSON.parse(localStorage.getItem('basket'));
   }
 
+  clearBasket() {
+    localStorage.removeItem('basket');
+  }
+
   addToBasket (service: Service[]) {
     let basket = this.readBasket();
     if (basket == null) {

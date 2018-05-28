@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../models/user";
+import {Service} from "../models/service";
+import {Order} from "../models/order";
+import {AuthService} from "../services/auth.service";
+import {ServiceService} from "../services/service.service";
+import {log} from "util";
 
 @Component({
   selector: 'app-personal-page',
@@ -8,13 +13,22 @@ import {User} from "../models/user";
 })
 export class PersonalPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService,
+              private service: ServiceService) { }
   user: User;
+  orders: Order<Service>[];
   ngOnInit() {
-    this.user = new User();
-    this.user.name = 'Екатерина';
-    this.user.phone = '8(909)977-44-54';
-    this.user.email = 'katya@mail.ru';
+    this.loadServices();
+    this.user = this.auth.getAuthUser();
+  }
+
+  loadServices(): void {
+    this.service.getOrders()
+      .subscribe(orders => {
+        this.orders = orders;
+      }, error2 => {
+        log(error2);
+      });
   }
 
 }

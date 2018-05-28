@@ -1,4 +1,7 @@
 <div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
+  <h4>
+    Выбранные услуги:
+  </h4>
   <table class="table">
     <thead>
     <tr>
@@ -19,5 +22,19 @@
     </tr>
     </tbody>
   </table>
-  <button (click)="orderSend()" routerLink="/" type="button" class="btn btn-lg btn-block btn-outline-primary">Заказать</button>
+  <h4>
+    Данные заказа:
+  </h4>
+  <form [formGroup]="order">
+    <div class="form-group">
+      <label>Дата:</label>
+      <input type="datetime-local" class="form-control" formControlName="time">
+    </div>
+    <div class="form-group">
+      <label>Пожелание:</label>
+      <textarea type="text" class="form-control" formControlName="wishes">
+      </textarea>
+    </div>
+  </form>
+  <button (click)="orderSend()" type="button" class="btn btn-lg btn-block btn-outline-primary">Заказать</button>
 </div>
