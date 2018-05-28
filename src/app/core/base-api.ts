@@ -21,6 +21,12 @@ export class BaseApi {
     );
   }
 
+  getNoAuth(url: string = ''): Observable<any> {
+    return this.http.get(
+      this.getUrl(url)
+    );
+  }
+
   patch(url: string = '', data: any = {}): Observable<any> {
     return this.http.patch(
       this.getUrl(url),

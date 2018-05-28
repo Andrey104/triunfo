@@ -10,11 +10,15 @@ import {SubcategoryListComponent} from './subcategory-list/subcategory-list.comp
 import {PersonalPageComponent} from './personal-page/personal-page.component';
 import {PersonalEditComponent} from './personal-edit/personal-edit.component';
 import {RegistrationComponent} from './registration/registration.component';
+import {MyServicesComponent} from "./my-services/my-services.component";
+import {AddServiceComponent} from "./add-service/add-service.component";
 
 
 const mainRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'assistant', component: HelperComponent},
+  {path: 'my-services', component: MyServicesComponent},
+  {path: 'my-services/add', component: AddServiceComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'personal', component: PersonalPageComponent},
   {path: 'personal/edit', component: PersonalEditComponent},

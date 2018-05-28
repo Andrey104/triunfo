@@ -1,3 +1,6 @@
 .sh {
   display: none;
 }
+.open {
+  display: block;
+}

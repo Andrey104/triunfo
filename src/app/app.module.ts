@@ -20,6 +20,8 @@ import { PersonalPageComponent } from './personal-page/personal-page.component';
 import { PersonalEditComponent } from './personal-edit/personal-edit.component';
 import { BaseApi } from './core/base-api';
 import { RegistrationComponent } from './registration/registration.component';
+import { MyServicesComponent } from './my-services/my-services.component';
+import { AddServiceComponent } from './add-service/add-service.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { RegistrationComponent } from './registration/registration.component';
     SubcategoryListComponent,
     PersonalPageComponent,
     PersonalEditComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    MyServicesComponent,
+    AddServiceComponent
   ],
   imports: [
     BrowserModule,

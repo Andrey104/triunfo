@@ -1,12 +1,15 @@
 <div class="container py-3" [ngClass]="{sh: shadow}">
   <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 box-shadow" *ngFor="let category of categories">
+    <div class="card mb-4 box-shadow" *ngFor="let type of types">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">{{category?.name}}</h4>
+        <h4 class="my-0 font-weight-normal">{{type?.name}}</h4>
       </div>
       <div class="card-body">
         <ul class="list-unstyled mt-3 mb-4">
-          <li *ngFor="let sub of category?.subcategories" (click)="shadow=true" routerLink="/categories/{{sub.id}}/{{category.id}}">
+          <li class="sh"
+              *ngFor="let sub of subtypes"
+              routerLink="/categories/{{sub?.id}}/{{type?.id}}"
+              [ngClass]="{open: showSubType(type.id, sub.type.id)}">
             {{sub?.name}}
           </li>
         </ul>

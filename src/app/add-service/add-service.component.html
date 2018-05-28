@@ -1,0 +1,28 @@
+<div class=" helper pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+  <form [formGroup]="serviceForm">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Подтип услуги:</label>
+      <select class="form-control"
+              id="exampleFormControlSelect1"
+              formControlName="subtype">
+        <option *ngFor="let subtype of subtypes"
+                [ngValue]="subtype.id">{{subtype.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Имя:</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label >Цена:</label>
+      <input type="number" class="form-control" formControlName="price">
+    </div>
+    <div class="form-group">
+      <label >Описание:</label>
+      <textarea class="form-control" rows="3" formControlName="details"></textarea>
+    </div>
+    <button (click)="ok()" type="submit" class="btn btn-lg btn-block btn-outline-primary">
+      Добавить
+    </button>
+  </form>
+</div>

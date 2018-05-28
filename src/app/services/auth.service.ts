@@ -19,6 +19,8 @@ export class AuthService extends BaseApi {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userRole');
   }
 
   isLogin() {
