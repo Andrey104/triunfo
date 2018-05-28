@@ -15,7 +15,7 @@ export class ServiceService extends BaseApi {
     super(http);
   }
   getServices(): Observable<Service[]> {
-    return this.get(`services/`);
+    return this.getNoAuth(`services/`);
   }
   addService(service: Service): Observable<Service> {
     return this.post(`services/`, service);
@@ -24,10 +24,10 @@ export class ServiceService extends BaseApi {
     return this.put(`services/${service.id}/`, service);
   }
   getSubTypes(): Observable<SubType[]> {
-    return this.get(`subtypes/`);
+    return this.getNoAuth(`subtypes/`);
   }
 
   getTypes(): Observable<Type[]> {
-    return this.get(`types/`);
+    return this.getNoAuth(`types/`);
   }
 }
