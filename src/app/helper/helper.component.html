@@ -1,31 +1,31 @@
 <div [ngClass]="{open: helperOpen}"
      class=" helper pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
-  <form>
+  <form [formGroup]="helper">
     <div class="form-group">
       <label for="exampleFormControlSelect1">Действие</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Корпоратив</option>
-        <option>День рождения</option>
-        <option>Выпускной</option>
-        <option>Свадьба</option>
-        <option>Детский праздник</option>
+      <select class="form-control" id="exampleFormControlSelect1" formControlName="action">
+        <option [ngValue]="1">Корпоратив</option>
+        <option [ngValue]="2">День рождения</option>
+        <option [ngValue]="3">Выпускной</option>
+        <option [ngValue]="4">Свадьба</option>
+        <option [ngValue]="5">Детский праздник</option>
       </select>
     </div>
     <div class="form-group">
       <label >Выберите количество гостей</label>
-      <input type="number" class="form-control">
+      <input type="number" class="form-control" formControlName="count">
     </div>
     <div class="form-group">
       <label >Выберите дату</label>
-      <input type="date" class="form-control">
+      <input type="date" class="form-control" formControlName="date">
     </div>
     <div class="form-group">
       <label >Введите предполагаемый бюджет</label>
-      <input type="number" class="form-control">
+      <input type="number" class="form-control" formControlName="sum">
     </div>
     <div class="form-group">
       <label >Пожелания</label>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" formControlName="wishes"></textarea>
     </div>
     <button (click)="openHelperResult()" type="submit" class="btn btn-lg btn-block btn-outline-primary">
       Результат

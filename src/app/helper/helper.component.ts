@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {HelperResult} from '../models/helper-result';
 import {HelperResultElement} from '../models/helper-result-element';
-import {Service} from "../models/service";
-import {Basket} from "../models/basket";
-import {BasketService} from "../services/basket.service";
+import {Service} from '../models/service';
+import {Basket} from '../models/basket';
+import {BasketService} from '../services/basket.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ServiceService} from "../services/service.service";
+import {Helper} from "../models/helper";
 
 @Component({
   selector: 'app-helper',
@@ -12,13 +15,22 @@ import {BasketService} from "../services/basket.service";
 })
 export class HelperComponent implements OnInit {
 
-  constructor(private basketService: BasketService) { }
+  constructor(private basketService: BasketService,
+              private service: ServiceService) { }
   helperOpen = true;
   helperResultOpen = false;
   result: HelperResult;
 
+  helper: FormGroup = new FormGroup({
+    action: new FormControl('', Validators.required),
+    count: new FormControl('', Validators.required),
+    date: new FormControl('', Validators.required),
+    sum: new FormControl('', Validators.required),
+    wishes: new FormControl('', Validators.required),
+  });
+
   ngOnInit() {
-    this.helperInit();
+    // this.helperInit();
   }
 
   helperInit() {
@@ -59,8 +71,21 @@ export class HelperComponent implements OnInit {
   }
 
   openHelperResult() {
-    this.helperOpen = false;
-    this.helperResultOpen = true;
+    const helper = new Helper();
+    helper.action = this.helper.value.action;
+    helper.count = this.helper.value.count;
+    helper.date = this.helper.value.date;
+    helper.sum = this.helper.value.sum;
+    helper.wishes = this.helper.value.wishes;
+
+    this.service.getHelper(helper).subscribe(data => {
+      this.helperOpen = false;
+      this.helperResultOpen = true;
+    }, error2 => {
+      alert('Ошибка! Попробуйте снова!');
+    });
+
   }
+
 
 }

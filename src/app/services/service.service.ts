@@ -7,6 +7,7 @@ import {SubType} from '../models/sub-type';
 import {Type} from '../models/type';
 import {User} from '../models/user';
 import {Order} from "../models/order";
+import {Helper} from "../models/helper";
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,8 @@ export class ServiceService extends BaseApi {
   }
   getOrder(id: number): Observable<Order<Service>> {
     return this.get(`orders/${id}`);
+  }
+  getHelper(helper: Helper): Observable<User> {
+    return this.post(`helper/`, helper);
   }
 }
