@@ -9,6 +9,19 @@
 </div>
 <div class="pricing-header py-5 px-3 pb-md-4 mx-auto">
   <h2 class="display-4">Услуги</h2>
+  <form [formGroup]="sortForm">
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Сортировка:</label>
+      <select class="form-control col-3" id="exampleFormControlSelect1" formControlName="param">
+        <option [ngValue]="'price'">Цена</option>
+        <option selected [ngValue]="'id'">Номер</option>
+      </select>
+      <button (click)="sort()"
+              class="btn btn-outline-primary">
+        sort
+      </button>
+    </div>
+  </form>
   <table class="table">
     <thead>
     <tr>

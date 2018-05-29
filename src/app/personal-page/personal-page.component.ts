@@ -39,4 +39,5 @@ export class PersonalPageComponent implements OnInit {
     if (this.role === '2') { return true; }
   }
 
+
 }
