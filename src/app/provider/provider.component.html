@@ -14,7 +14,7 @@
       <label for="exampleFormControlSelect1">Сортировка:</label>
       <select class="form-control col-3" id="exampleFormControlSelect1" formControlName="param">
         <option [ngValue]="'price'">Цена</option>
-        <option selected [ngValue]="'id'">Номер</option>
+        <option selected [ngValue]="'id'">Популярность</option>
       </select>
       <button (click)="sort()"
               class="btn btn-outline-primary">
